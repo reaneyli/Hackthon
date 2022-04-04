@@ -19,26 +19,9 @@
 :: -o the result save path
 :: -u <gpu mode>,0:gpu_off,1:gpu_on
 :: registration fMOST sample data
-..\dist\win64_bin\global_registration1.exe -f target/25um/  -m subject/fMOST_18458_raw.v3draw  -p r+f+n -o result/fMOST/ -d 1 -l 20
-..\dist\win64_bin\local_registration1.exe -p config/fMOST_config.txt -s result/fMOST/global.v3draw ^
+..\dist\win64_bin\global_registration.exe -f target/25um/  -m subject/fMOST_18458_raw.nii.gz  -p r+f+n -o result/fMOST/ -d 1 -l 20
+..\dist\win64_bin\local_registration.exe -p config/fMOST_config.txt -s result/fMOST/global.nii.gz ^
 ^ -m subject/fMOST_segmentation_25um/ -l target/25um/target_landmarks/low_landmarks.marker  -g target/25um/ -o result/fMOST/
 
-
-:: registration LSFM sample data
-..\dist\win64_bin\global_registration1.exe -f target/25um/  -m subject/LSFM_raw.v3draw  -p r+f+n -o result/LSFM/ -d 70 -l 20
-..\dist\win64_bin\local_registration1.exe -p config/LSFM_config.txt -s result/LSFM/global.v3draw ^
-^ -l target/25um/target_landmarks/low_landmarks.marker  -g target/25um/ -o result/LSFM/
-
-
-:: registration MRI sample data
-..\dist\win64_bin\global_registration1.exe -f target/25um/ -m subject/MRI_raw.v3draw  -p r+f+n -o result/MRI/ -d 20 -l 20
-..\dist\win64_bin\local_registration1.exe -p config/MRI_config.txt -s result/MRI/global.v3draw ^
-^ -l target/25um/target_landmarks/low_landmarks.marker  -g target/25um/ -o result/MRI/
-
-
-:: registration VISoR sample data
-..\dist\win64_bin\global_registration1.exe -f target/25um/ -m subject/VISoR_raw.v3draw  -p r+f+n -o result/VISoR/ -d 20 -l 20
-..\dist\win64_bin\local_registration1.exe -p config/VISoR_config.txt -s result/VISoR/global.v3draw ^
-^ -l target/25um/target_landmarks/low_landmarks.marker  -g target/25um/ -o result/VISoR/
 
 pause
